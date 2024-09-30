@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:(</title>
+    <style>
+        body {
+            background-color: black; /* Fondo negro */
+            color: white; /* Texto blanco */
+            font-family: 'Brush Script MT', cursive; /* Fuente */
+            line-height: 1.6; /* Espaciado entre líneas */
+            padding: 20px; /* Espaciado interno */
+            text-align: center; /* Centrar texto */
+            font-size: 1.5em; /* Tamaño de fuente ajustado */
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.1); /* Fondo de la tarjeta con transparencia */
+            border-radius: 10px; /* Bordes redondeados */
+            padding: 20px; /* Espaciado interno de la tarjeta */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra de la tarjeta */
+            max-width: 600px; /* Ancho máximo de la tarjeta */
+            margin: auto; /* Centrar la tarjeta */
+        }
+
+        p {
+            opacity: 0; /* Inicialmente ocultar los párrafos */
+            transition: opacity 1s; /* Transición suave de opacidad */
+            margin-bottom: 15px; /* Espacio inferior entre párrafos */
+        }
+
+        #img1 {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px; /* Espaciado a la derecha */
+        }
+
+        #img2 {
+            width: 100px;
+            height: 100px;
+            margin-left: 10px; /* Espaciado a la izquierda */
+        }
+
+        #nose {
+            font-size: 1.7em; /* Tamaño de fuente para el pie de la carta */
+            text-align: center; /* Centrar texto */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card" id="text">
+        <p>Amor...</p>
+        <p>Sí, como intuirás, me desvelé haciendo esto.</p>
+        <p>No sé por dónde empezar... Esta carta es, sobre todo, una disculpa. Sí, sé que ya me dijiste que me perdonabas
+            y que no querías que esto pasara a mayores o siguiera, pero la verdad es que no puedo dormir sin antes
+            escribirte. Las lágrimas caen sobre mi teclado sin cesar.</p>
+        <p>La verdad es que me sentí muy mal cuando me dijiste que ya estabas acostumbrada a que olviden fechas
+            importantes como cumplir meses contigo. Yo soy una persona muy atenta a los detalles, y el hecho de que se me
+            haya pasado eso me está torturando de una manera que ni te imaginas. Nunca he olvidado una fecha importante. No
+            me justifico, luego actué mal, de forma impulsiva como siempre, y además muy egoísta. No quiero que pienses que
+            no me importa nuestra relación, porque la verdad es que me importa mucho, y me duele que las cosas se arruinen
+            por mis errores.</p>
+        <p>Hablando de ti, obviamente esto te cayó como un balde de agua fría: "¿Cómo pudo mi novio haber dejado pasar
+            algo tan importante?", dirás. Y tienes toda la razón. La verdad es que no tengo ni la más mínima idea de cómo se
+            me pasó, considerando que soy una persona muy atenta a todo. Pero bueno, no hay excusas para lo que hice, y no
+            quiero que pienses que no me importa, sino todo lo contrario. Me importa tanto que estoy llorando como un
+            estúpido. Si no fuera así, no estaría escribiendo esto ni contándote todo lo que pienso al respecto. Feliz primer 
+            mes de novios, de verdad que me siento muy feliz contigo y me alegra mucho que demuestres tus sentimientos conmigo. 
+            De verdad que te amo, mucho diría yo...</p>
+        <p id="nose">Con cariño y mucha pena,<br> 
+            Tu amor, Víctor <br>
+            <img id="img1" src="./4ed39fd7-2c3a-4c74-9631-875536649036.gif" alt="Imagen 1">
+            <img id="img2" src="./5f563b57-d3f6-42a0-ae01-3695ecdc88c2.gif" alt="Imagen 2">
+        </p>
+    </div>
+
+    <script>
+        function showText() {
+            const paragraphs = document.querySelectorAll('#text p');
+            paragraphs.forEach((paragraph, index) => {
+                let delay;
+                // Establecer tiempos de espera diferentes para párrafos según su longitud
+                if (index === 0) delay = 0; // "Amor..."
+                else if (index === 1) delay = 2000; // "Sí, como intuirás..."
+                else if (index === 2) delay = 4000; // "No sé por dónde empezar..."
+                else if (index === 3) delay = 6000; // "La verdad es que me sentí muy mal..."
+                else if (index === 4) delay = 8000; // "Hablando de ti..."
+                else delay = 10000; // "Con cariño y mucha pena..."
+
+                setTimeout(() => {
+                    paragraph.style.opacity = 1; // Revelar el párrafo
+                }, delay); // Retraso específico
+            });
+        }
+
+        window.onload = showText; // Ejecutar al cargar la página
+    </script>
+
+</body>
+
+</html>
